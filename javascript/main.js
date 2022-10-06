@@ -1,178 +1,109 @@
+//2DA PRE ENTREGA FINAL GONZALO REYNOSO
+//STOCK DE PRODUCTOS
+const stockProductos = [
 
-//VARIABLES
+    { id: 1, nombre: "Termo Stanley", marca: "Stanley", presentacion: "940ml", precio: 20, descripcion: "mejor termo", imagen: "https://www.stanleypmi.com.py/wp-content/uploads/2021/09/1-13.jpg" },
+    { id: 2, nombre: "Mate Stanley", marca: "Stanley", presentacion: "240ml", precio: 10, descripcion: "mejor mate", imagen: "https://http2.mlstatic.com/D_NQ_NP_2X_615433-MLA46334848707_062021-F.webp" },
+    { id: 3, nombre: "Bombilla Stanley", marca: "Stanley", presentacion: "18cm", precio: 20, descripcion: "mejor bombilla", imagen: "https://http2.mlstatic.com/D_NQ_NP_2X_874452-MLA49513557450_032022-F.webp" },
+    { id: 4, nombre: "Linterna Indestructible Varta", marca: "VARTA", presentacion: "F20 Pro", precio: 20, descripcion: "linterna", imagen: "https://www.pescatienda.com/large/LINTERNA-INDESTRUCTIBLE-F10-PRO-VARTA-i30739.jpg" },
+    { id: 5, nombre: "", marca: "", presentacion: "LED110 Lumens", precio: 20, descripcion: "linterna", imagen: "https://www.pescatienda.com/large/LINTERNA-FRONTAL-1-LED-110-LUMENS-i28429.jpg" },
+    { id: 5, nombre: "Contador de metros", marca: "Yoshikawa", presentacion: "Z046", precio: 20, descripcion: "contador de metros", imagen: "https://www.pescatienda.com/large/Z046-CONTADOR-DE-METROS-YOSHIKAWA-%28Sin-caja%29-i30626.jpg" }
+];
 
-let productoIngresado;
-let sumaFinalPrecios;
-let precioTermo = 40;
-let precioMate = 30;
-let precioBombilla = 10;
-let contadorTermo = 0;
-let contadorMate = 0;
-let contadorBombilla = 0;
-let descuentoDel10 = 10;
-let precioFinalTermo;
-let precioFinalMate;
-let precioFinalBombilla;
-let mensajeDescuento;
-let mensaje;
-let mostrar;
-let productos;
-let articulos;
-let cantidadTotalDeProductos;
-let precioConDescuento;
-let precioFinal;
-let productoEncontrado;
+//CONSTANTES
+const contenedorProductos = document.getElementById("contenedor-productos");
+const inputBusqueda = document.getElementById("inputBusqueda");
+const botonBuscar = document.getElementById("botonBuscar");
+const botonIniciarSesion = document.getElementById("botonIniciarSesion");
+const botonCerrarSesion = document.getElementById("botonCerrarSesion");
+const contenedorMensajeCarrito = document.getElementById("contenedor-mensaje-carrito");
 
 
-    //Proceso de contar y guardar cantidad     CONTADORES
-    function contadores(){
-        switch (productoIngresado) {
-        case "termo":
-            contadorTermo++;
-            break;
-    
-        case "mate":
-            contadorMate++;
-            break;
-    
-        case "bombilla":
-            contadorBombilla++;
-            break;
-        }
-    }
 
-    //Lógica de productos
-    function calcularProductos() {
-        precioFinalTermo = precioTermo * contadorTermo;
-        precioFinalMate = precioMate * contadorMate;
-        precioFinalBombilla = precioBombilla * contadorBombilla;
-        
-        sumaFinalPrecios = precioFinalTermo + precioFinalMate + precioFinalBombilla;
-        
-        cantidadTotalDeProductos = contadorTermo + contadorMate + contadorBombilla;
-    }
-
-    //Cálculo de descuentos
-    function calcularDescuento() {
-        if (cantidadTotalDeProductos >= 3) {
-            mensajeDescuento = "Felicidades, por su compra obtuvo un 10% de descuento";
-            precioConDescuento = sumaFinalPrecios / descuentoDel10;
-        } else if (cantidadTotalDeProductos == 2) {
-            mensajeDescuento = "Cómpre 3 unidades o más y obtendrá un 10% de descuento";
-            precioConDescuento = 0;
-        } else {
-            mensajeDescuento = "No hay descuento";
-            precioConDescuento = 0;
-        }
-        precioFinal = sumaFinalPrecios - precioConDescuento;
-    }
-
-    
-    //Mostrar compra final
-    function mostrarProductos(){
-        mensaje = `Usted compró: <br>
-        ${contadorTermo} termo/s, <br>
-        ${contadorMate} mate/s, <br>
-        ${contadorBombilla} bombillas/s, <br>
-        El precio final a pagar es de $${precioFinal}
-        ${mensajeDescuento}`;
-
-        document.write(mensaje);
-    }
-
-    //CONTRUCTOR DE PRODUCTOS
-    //Forma antigua de crear CONSTRUCTOR
-    // function CrearProducto(titulo, imagen, descripcion){
-    //     this.titulo = titulo;
-    //     this.imagen = imagen;
-    //     this.descripcion = descripcion;
-    // }
-
-    // const productoTermo = new CrearProducto('Mate Stanley', 'imagen', 'El mate Stanley es el mejor');
-
-    //Forma mas nueva de crear un CONSTRUCTOR con CLASS y un objeto por párametro en vez de muchos parámetros
-    class CrearProducto{   
-        constructor(datos){
-            this.id = datos.id;
-            this.titulo = datos.titulo;
-            this.imagen = datos.imagen;
-            this.precio = datos.precio;
-            this.descripcion = datos.descripcion;
-            this.cantidad = datos.cantidad;
-            //this.vendido = datos.vendido;
-        }
-        vender(){
-            this.cantidad--;
-        }
+//SOLICITAR USUARIO POR LOCALSTORAGE
+    botonIniciarSesion.addEventListener("click", () => {
+    let usuario;
+    let usuarioStorage = localStorage.getItem("usuario");
+    if (usuarioStorage) {
+        usuario = usuarioStorage;
+        let mensaje = `Bienvenido ${usuario}.`
+        alert(mensaje);
+    } else {
+        usuario = prompt("Ingrese su nombre");
+        localStorage.setItem("usuario", usuario);
     };
+    })
 
-    const productoTermo = new CrearProducto(
-        {
-        id:1,
-        titulo: 'Termo Stanley',
-        imagen: 'https://m.media-amazon.com/images/I/71ao2vh5tDL._AC_SL1500_.jpg',
-        descripcion: 'El termo mantiene tus líquidos calientes o fríos durante 28 horas. El mate mantiene la temperatura durante toda la cebada, es práctico, fácil de limpiar e inocuo, ya que no transfiere ningún aroma ni sabor defectuoso a tu mate. Mantiene la temperatura al cliente durante 30 minutos y fría durante 3 horas.',
-        precio: 19000,
-        cantidad: 4,
-        vendido: 'no',
-        }
-    );
+//FUNCION PARA CERRAR SESION POR LOCALSTORAGE
+    botonCerrarSesion.addEventListener("click", () => {
+        localStorage.clear();
+        alert("Sesión cerrada con éxito");
+    })
 
-    const productoMate = new CrearProducto(
-        {
-        id:2,
-        titulo: 'Mate Stanley',
-        imagen: 'https://d2ye0ltusw47tz.cloudfront.net/270469/mate-stanley-236-ml-black.jpg',
-        descripcion: 'Mantiene la temperatura durante toda la cebada - El práctico e higiénico - No traspasa sabores ni aromas a tu mate - Construido en acero 18/8 - Aislación de doble pared - Libre de BPA, aprobado por INAL - Mantiene 30 minutos el agua caliente, - 3 horas el frío. - Altura: 10,5 cm - Diámetro: 8 cm - Peso: 245gr - Presentación en caja de cartón individual.',
-        precio: 12000,
-        cantidad: 5,
-        vendido: 'no',
-        }
-    );
-
-    const productoBombilla = new CrearProducto(
-        {
-        id:3,
-        titulo: 'Bombilla Stanley',
-        imagen: 'http://d3ugyf2ht6aenh.cloudfront.net/stores/105/855/products/a141c14b-a22d-4ea9-8f29-2844eff8b542-3913b5d5c8ab48bd0d16487363612924-640-0.png',
-        descripcion: 'Desde las más finas a las más gruesas, desde pura yerba, hasta mezclas de hierbas. usted controla el proceso! Atornilla para limitar o aumentar el flujo a tu gusto, la bombilla de resorte ajustable Stanley trae innovación a su momento de disfrutar de un buen mate.',
-        precio: 2000,
-        cantidad: 5,
-        vendido: 'no',
-        }
-    );
-
-
-    //Arreglo PRODUCTOS
-    productos = [];
-    productos.push(new CrearProducto(productoTermo));
-    productos.push(new CrearProducto(productoMate));
-    productos.push(new CrearProducto(productoBombilla));
-
-    //Forma de vender
-    // console.log(productoTermo);
-    // productoTermo.vender();
-    // console.log(productoTermo);
-
-    //Renderización de cards para el HTML
-    const div = document.getElementById("div");
-
-    productos.forEach(producto => {
-        productoRenderizado = document.createElement("div")
-        productoRenderizado.innerHTML = `
-        <h5>${producto.titulo}<h5/>
-        <img class="imagenCards "src="${producto.imagen}" alt="producto de camping"> <br>
-        <span>${producto.descripcion}<span/>
-        <span>precio: $${producto.precio}<span/><br>
-        <button id=${producto.id}>Agregar al carrito</button>`;
-
-        div.append(productoRenderizado);
+    //RENDERIZACION DE CARDS POR HTML
+    let carrito = [];
+    stockProductos.forEach(producto => {
+        const renderizado = document.createElement("div");
+        renderizado.innerHTML =
+            `
+    <img class= "imagenCards" src = ${producto.imagen} alt "">
+    <h3>${producto.nombre}</h3>
+    <h4>${producto.marca}</h4>
+    <h4>${producto.presentacion}</h4>
+    <p>${producto.descripcion}<p/><br>
+    <span>Precio: $${producto.precio}<span/><br>
+    <button id=${producto.id}>Agregar al carrito</button><br>
+    `
+        contenedorProductos.append(renderizado);
         const boton = document.getElementById(producto.id);
-        boton.addEventListener("click", () => buscarProducto(producto));
-    });
+        boton.addEventListener("click", () => agregarAlCarrito(producto));
+    })
 
-    //Abrir consola y ver la compra efectuada
-    const buscarProducto = (producto) => {
-        console.log(`Compraste el producto ${producto.id} con el nombre ${producto.titulo} y tiene un precio de $${producto.precio}`);
+
+                        //ACA TRATÉ DE CREAR UN INNERHTML PARA MOSTRAR EL CARRITO SELECCIONADO
+
+    // carrito.forEach(producto => {
+    //     const productoComprado = document.createElement("div");
+    //     productoComprado.innerHTML = 
+    //     `
+    //     Usted compró ${carrito.nombre}, ${carrito.marca}, 
+    //     ${carrito.presentacion}, y el precio total a pagar es de $${carrito.precio}
+    //     `
+    //     contenedorMensajeCarrito.append(productoComprado);
+    // })
+
+    //FUNCION PARA AGREGAR AL CARRITO
+    // Abrir consola y ver la compra efectuada
+    const agregarAlCarrito = (producto) => {
+        let productoExistente = carrito.find(item => item.id === producto.id)
+        if (productoExistente !== undefined) {
+            productoExistente.precio = productoExistente.precio + productoExistente.precio;
+            productoExistente.cantidad = productoExistente.cantidad + 1;
+        } else {
+            carrito.push({
+                id: producto.id,
+                imagen: producto.imagen,
+                nombre: producto.nombre,
+                marca: producto.marca,
+                precio: producto.precio,
+                presentacion: producto.presentacion,
+                descripcion: producto.descripcion,
+                cantidad: 1
+            })
+        }
+        const boton = document.getElementById(producto.id);
+        boton.addEventListener("click", () => console.log(carrito));
+    }
+
+    //FUNCION PARA BUSCAR EN EL CARRITO
+                    //ERROR NO PUDE HACER EL BUSCADOR
+    const buscarProducto = (string) => {
+        let productoBuscado = stockProductos.find(producto => producto.nombre.includes(string));
+        console.log(productoBuscado);
+        inputBusqueda.value = "";
+        console.log(productoBuscado);
+
+        inputBusqueda.addEventListener("click", () => console.log(botonBuscar.value));
+
     }
 
