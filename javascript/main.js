@@ -21,31 +21,47 @@ const contenedorMensajeCarrito = document.getElementById("contenedor-mensaje-car
 
 
 //SOLICITAR USUARIO POR LOCALSTORAGE
-    botonIniciarSesion.addEventListener("click", () => {
+botonIniciarSesion.addEventListener("click", () => {
     let usuario;
     let usuarioStorage = localStorage.getItem("usuario");
     if (usuarioStorage) {
+                                                //alerta de SWEETALERT
+        swal({
+            title: `Bienvenido ${usuario}`,
+            text: "Haz ingresado con éxito",
+            icon: "success",
+            button: "Cerrar",
+        });
         usuario = usuarioStorage;
-        let mensaje = `Bienvenido ${usuario}.`
-        alert(mensaje);
     } else {
-        usuario = prompt("Ingrese su nombre");
+        swal({
+            text: 'Ingrese su usuario',
+            content: "input",
+            button: {
+            text: "Aceptar",
+            },
+        });
         localStorage.setItem("usuario", usuario);
     };
-    })
+});
 
 //FUNCION PARA CERRAR SESION POR LOCALSTORAGE
-    botonCerrarSesion.addEventListener("click", () => {
-        localStorage.clear();
-        alert("Sesión cerrada con éxito");
-    })
+botonCerrarSesion.addEventListener("click", () => {
+    localStorage.clear();
+                                                //alerta de SWEETALERT
+    swal({
+        title: `Sesión cerrada con éxito`,
+        icon: "success",
+        button: "Cerrar",
+    });
+})
 
-    //RENDERIZACION DE CARDS POR HTML
-    let carrito = [];
-    stockProductos.forEach(producto => {
-        const renderizado = document.createElement("div");
-        renderizado.innerHTML =
-            `
+//RENDERIZACION DE CARDS POR HTML
+let carrito = [];
+stockProductos.forEach(producto => {
+    const renderizado = document.createElement("div");
+    renderizado.innerHTML =
+        `
     <img class= "imagenCards" src = ${producto.imagen} alt "">
     <h3>${producto.nombre}</h3>
     <h4>${producto.marca}</h4>
@@ -54,56 +70,56 @@ const contenedorMensajeCarrito = document.getElementById("contenedor-mensaje-car
     <span>Precio: $${producto.precio}<span/><br>
     <button id=${producto.id}>Agregar al carrito</button><br>
     `
-        contenedorProductos.append(renderizado);
-        const boton = document.getElementById(producto.id);
-        boton.addEventListener("click", () => agregarAlCarrito(producto));
-    })
+    contenedorProductos.append(renderizado);
+    const boton = document.getElementById(producto.id);
+    boton.addEventListener("click", () => agregarAlCarrito(producto));
+})
 
 
-                        //ACA TRATÉ DE CREAR UN INNERHTML PARA MOSTRAR EL CARRITO SELECCIONADO
+//ACA TRATÉ DE CREAR UN INNERHTML PARA MOSTRAR EL CARRITO SELECCIONADO
 
-    // carrito.forEach(producto => {
-    //     const productoComprado = document.createElement("div");
-    //     productoComprado.innerHTML = 
-    //     `
-    //     Usted compró ${carrito.nombre}, ${carrito.marca}, 
-    //     ${carrito.presentacion}, y el precio total a pagar es de $${carrito.precio}
-    //     `
-    //     contenedorMensajeCarrito.append(productoComprado);
-    // })
+// carrito.forEach(producto => {
+//     const productoComprado = document.createElement("div");
+//     productoComprado.innerHTML = 
+//     `
+//     Usted compró ${carrito.nombre}, ${carrito.marca}, 
+//     ${carrito.presentacion}, y el precio total a pagar es de $${carrito.precio}
+//     `
+//     contenedorMensajeCarrito.append(productoComprado);
+// })
 
-    //FUNCION PARA AGREGAR AL CARRITO
-    // Abrir consola y ver la compra efectuada
-    const agregarAlCarrito = (producto) => {
-        let productoExistente = carrito.find(item => item.id === producto.id)
-        if (productoExistente !== undefined) {
-            productoExistente.precio = productoExistente.precio + productoExistente.precio;
-            productoExistente.cantidad = productoExistente.cantidad + 1;
-        } else {
-            carrito.push({
-                id: producto.id,
-                imagen: producto.imagen,
-                nombre: producto.nombre,
-                marca: producto.marca,
-                precio: producto.precio,
-                presentacion: producto.presentacion,
-                descripcion: producto.descripcion,
-                cantidad: 1
-            })
-        }
-        const boton = document.getElementById(producto.id);
-        boton.addEventListener("click", () => console.log(carrito));
+//FUNCION PARA AGREGAR AL CARRITO
+// Abrir consola y ver la compra efectuada
+const agregarAlCarrito = (producto) => {
+    let productoExistente = carrito.find(item => item.id === producto.id)
+    if (productoExistente !== undefined) {
+        productoExistente.precio = productoExistente.precio + productoExistente.precio;
+        productoExistente.cantidad = productoExistente.cantidad + 1;
+    } else {
+        carrito.push({
+            id: producto.id,
+            imagen: producto.imagen,
+            nombre: producto.nombre,
+            marca: producto.marca,
+            precio: producto.precio,
+            presentacion: producto.presentacion,
+            descripcion: producto.descripcion,
+            cantidad: 1
+        })
     }
+    const boton = document.getElementById(producto.id);
+    boton.addEventListener("click", () => console.log(carrito));
+}
 
-    //FUNCION PARA BUSCAR EN EL CARRITO
-                    //ERROR NO PUDE HACER EL BUSCADOR
-    const buscarProducto = (string) => {
-        let productoBuscado = stockProductos.find(producto => producto.nombre.includes(string));
-        console.log(productoBuscado);
-        inputBusqueda.value = "";
-        console.log(productoBuscado);
+//FUNCION PARA BUSCAR EN EL CARRITO
+//ERROR NO PUDE HACER EL BUSCADOR
+const buscarProducto = (string) => {
+    let productoBuscado = stockProductos.find(producto => producto.nombre.includes(string));
+    console.log(productoBuscado);
+    inputBusqueda.value = "";
+    console.log(productoBuscado);
 
-        inputBusqueda.addEventListener("click", () => console.log(botonBuscar.value));
+    inputBusqueda.addEventListener("click", () => console.log(botonBuscar.value));
 
-    }
+}
 
