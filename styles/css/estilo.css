@@ -1,0 +1,96 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  background-color: white; }
+
+/* CARDS */
+.contenedor-productos-padre {
+  display: flex;
+  text-align: center;
+  padding: 20px;
+  justify-content: space-evenly; }
+
+.imagenCards {
+  width: 7vw;
+  height: 8vw; }
+
+.box-redesSociales-guiaRapida {
+  display: flex; }
+
+.containerFooter {
+  display: flex;
+  padding: 1px;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 1px;
+  background-color: #425b49;
+  color: #f5f3f1; }
+
+/* FORMULARIO */
+.formulario {
+  border: black solid 1px; }
+
+.boton {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  outline: 0px;
+  border-radius: 3px;
+  background: orange;
+  color: white;
+  cursor: pointer;
+  transition: all 300ms; }
+  .boton:hover {
+    background-color: #28ca77; }
+
+/* LOGO */
+.boxFooter {
+  display: flex;
+  flex-direction: column;
+  padding: 40px; }
+  .boxFooter .logo img {
+    width: 160px; }
+  .boxFooter .texto-footer {
+    max-width: 350px;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 14px; }
+  .boxFooter a {
+    margin-top: 10px;
+    font-weight: 600; }
+    .boxFooter a:hover {
+      opacity: 0.8; }
+    .boxFooter a .fa-brands {
+      font-size: 20px;
+      padding: 8px; }
+
+/* DERECHOS RESERVADOS */
+.box-Copyright {
+  color: #130c0c;
+  background-color: #b1ca58;
+  text-align: center;
+  width: 100%; }
+
+header {
+  width: 100%;
+  z-index: 1;
+  position: sticky;
+  border-radius: 2px black solid; }
+
+.containerBarraDescuentos {
+  background-color: #b1ca58;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  z-index: 0; }
+  .containerBarraDescuentos .barraDescuentos {
+    margin: 0%;
+    color: white; }
+
+.navbar {
+  background-color: #425b49; }
+
+nav a img:hover {
+  transform: scale(1.2, 1.2);
+  transition: all 0.5s; }

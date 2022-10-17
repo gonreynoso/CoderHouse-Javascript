@@ -1,0 +1,17 @@
+header {
+	width: 100%;
+	z-index: 1;
+	position: sticky;
+	border-radius: 2px black solid;
+}
+.containerBarraDescuentos {
+	background-color: #b1ca58;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	z-index: 0;
+	.barraDescuentos {
+		margin: 0%;
+		color: white;
+	}
+}
