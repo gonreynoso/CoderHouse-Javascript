@@ -49,10 +49,13 @@ botonCerrarSesion.addEventListener("click", () => {
 
 //RENDERIZACION DE CARDS POR HTML
 let carrito = [];
-stockTelevisores.forEach(producto => {
+fetch("./televisores.json")
+.then(response => response.json())
+.then(televisores => {
+    televisores.forEach(producto => {
     const renderizado = document.createElement("div");
     renderizado.innerHTML =
-        `
+    `
     <img class= "imagenCards" src = ${producto.imagen} alt "">
     <h3>${producto.nombre}</h3>
     <h4>${producto.marca}</h4>
@@ -64,6 +67,7 @@ stockTelevisores.forEach(producto => {
     contenedorProductos.append(renderizado);
     const boton = document.getElementById(producto.id);
     boton.addEventListener("click", () => agregarAlCarrito(producto));
+    })
 })
 
 
