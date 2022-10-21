@@ -2,13 +2,13 @@
 
 
 //CONSTANTES
-const contenedorProductos = document.getElementById("contenedor-productos");
+
+const contenedorProductosPadre = document.getElementById("contenedor-productos-padre");
 const inputBusqueda = document.getElementById("inputBusqueda");
 const botonBuscar = document.getElementById("botonBuscar");
 const botonIniciarSesion = document.getElementById("botonIniciarSesion");
 const botonCerrarSesion = document.getElementById("botonCerrarSesion");
 const contenedorMensajeCarrito = document.getElementById("contenedor-mensaje-carrito");
-
 
 
 //SOLICITAR USUARIO POR LOCALSTORAGE
@@ -48,12 +48,16 @@ botonCerrarSesion.addEventListener("click", () => {
 })
 
 //RENDERIZACION DE CARDS POR HTML
-let carrito = [];
-fetch("./televisores.json")
-.then(response => response.json())
-.then(televisores => {
-    televisores.forEach(producto => {
-    const renderizado = document.createElement("div");
+
+const traerProductos = async () => {
+    const contenedorProductosPadre = document.getElementById("contenedor-productos-padre");
+    try {
+        //codigo peligroso en caso de que el servidor esté caído
+        const response = await fetch("https://raw.githubusercontent.com/gonreynoso/CoderHouse-Javascript/main/javascript/televisores.json");
+        const data = await response.json();
+
+    data.forEach(producto => {
+    const renderizado = document.createElement("contenedor-productos-padre");
     renderizado.innerHTML =
     `
     <img class= "imagenCards" src = ${producto.imagen} alt "">
@@ -64,11 +68,19 @@ fetch("./televisores.json")
     <span>Precio: $${producto.precio}<span/><br>
     <button id=${producto.id}>Agregar al carrito</button><br>
     `
-    contenedorProductos.append(renderizado);
+    contenedorProductosPadre.append(renderizado);
     const boton = document.getElementById(producto.id);
     boton.addEventListener("click", () => agregarAlCarrito(producto));
-    })
-})
+    });
+    } catch (error) {
+    console.log(error);
+    }
+};
+
+traerProductos();
+
+
+
 
 
 //ACA TRATÉ DE CREAR UN INNERHTML PARA MOSTRAR EL CARRITO SELECCIONADO
