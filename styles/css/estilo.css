@@ -2,21 +2,41 @@ body {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  background-color: white; }
+  background-color: white;
+}
+
+main {
+  max-width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.h2main{
+  padding: auto;
+  margin: auto;
+}
 
 /* CARDS */
 .contenedor-productos-padre {
   display: flex;
   text-align: center;
   padding: 20px;
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+}
 
-.imagenCards {
+.card {
   width: 7vw;
-  height: 8vw; }
+  height: 8vw;
+  border-color: #130c0c;
+  border: #130c0c;
+  border-width: 5px;
+}
 
 .box-redesSociales-guiaRapida {
-  display: flex; }
+  display: flex;
+}
 
 .containerFooter {
   display: flex;
@@ -24,12 +44,15 @@ body {
   justify-content: space-evenly;
   width: 100%;
   margin: 1px;
+  padding-top: 40px;
   background-color: #425b49;
-  color: #f5f3f1; }
+  color: #f5f3f1;
+}
 
 /* FORMULARIO */
 .formulario {
-  border: black solid 1px; }
+  border: black solid 1px;
+}
 
 .boton {
   padding: 10px;
@@ -40,57 +63,101 @@ body {
   background: orange;
   color: white;
   cursor: pointer;
-  transition: all 300ms; }
-  .boton:hover {
-    background-color: #28ca77; }
+  transition: all 300ms;
+}
 
-/* LOGO */
+.boton:hover {
+  background-color: #28ca77;
+}
+
+/* FOOTER */
 .boxFooter {
   display: flex;
   flex-direction: column;
-  padding: 40px; }
-  .boxFooter .logo img {
-    width: 160px; }
-  .boxFooter .texto-footer {
-    max-width: 350px;
-    margin-top: 20px;
-    font-weight: 500;
-    font-size: 14px; }
-  .boxFooter a {
-    margin-top: 10px;
-    font-weight: 600; }
-    .boxFooter a:hover {
-      opacity: 0.8; }
-    .boxFooter a .fa-brands {
-      font-size: 20px;
-      padding: 8px; }
+  padding: 40px;
+}
+
+.boxFooter .logo img {
+  width: 160px;
+}
+
+.boxFooter .texto-footer {
+  max-width: 350px;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.boxFooter a {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.boxFooter a:hover {
+  opacity: 0.8;
+}
+
+.boxFooter a .fa-brands {
+  font-size: 20px;
+  padding: 8px;
+}
 
 /* DERECHOS RESERVADOS */
 .box-Copyright {
   color: #130c0c;
+  display: flex;
+  justify-content: center;
   background-color: #b1ca58;
   text-align: center;
-  width: 100%; }
+  width: 100%;
+  height: 30px;
+}
+
+/* HEADER */
 
 header {
   width: 100%;
   z-index: 1;
   position: sticky;
-  border-radius: 2px black solid; }
+  background-color: #dcdbdb;
+  border-radius: 2px black solid;
+}
 
-.containerBarraDescuentos {
+.contenedorBarraDescuentos {
   background-color: #b1ca58;
+  display: flex;
+  justify-content: center;
   width: 100%;
-  height: 30px;
+  height: 30%;
   text-align: center;
-  z-index: 0; }
-  .containerBarraDescuentos .barraDescuentos {
-    margin: 0%;
-    color: white; }
+  z-index: 0;
+}
 
-.navbar {
-  background-color: #dcdbdb; }
+.barraDescuentos {
+  margin: 0%;
+  color: white;
+}
 
-nav a img:hover {
+
+.navbar a img:hover {
   transform: scale(1.2, 1.2);
-  transition: all 0.5s; }
+  transition: all 0.5s;
+}
+
+
+/* .navbar {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 30px;} */
+
+/* .navBar ul li{
+  list-style-type: none;
+  display: inline-block;
+  padding: 5px;
+  text-decoration: none;} */
+
+
