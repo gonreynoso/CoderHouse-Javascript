@@ -1,0 +1,2 @@
+// { "id": 2, "nombre": "Mate", "marca": "Stanley", "presentacion": "240ml", "precio": 10, "descripcion": "mejor mate", "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_615433-MLA46334848707_062021-F.webp" },
+    // { "id": 3, "nombre": "Bombilla", "marca": "Stanley", "presentacion": "18cm", "precio": 20, "descripcion": "mejor bombilla", "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_874452-MLA49513557450_032022-F.webp" },
