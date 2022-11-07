@@ -196,14 +196,6 @@ main {
     background-color: #e9ecefd4;
 }
 
-#vaciar-carrito {
-    top: 85px;
-    right: 50px;
-    position: fixed;
-    width: 418px;
-    background-color: #e9ecefd4;
-    display: none;
-}
 
 
 .submenu:hover #carrito{

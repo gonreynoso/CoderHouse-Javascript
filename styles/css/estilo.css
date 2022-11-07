@@ -2,27 +2,35 @@ body {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  background-color: rgb(153, 164, 150);
+  background-color: rgb(187, 195, 185);
 }
 
 
-.h2main{
-  margin-top: 20px;
+h1 {
   text-align: center;
 }
 
 /* HEADER */
 
-/* header {
-  width: 100%;
-  z-index: 1;
-  position: sticky;
-  background-color: #dcdbdb;
-  border-radius: 2px black solid;
-} */
+  .header {
+    width: 100%;
+    z-index: 1;
+    position: sticky;
+    border-radius: 2px black solid;}
+  
+  .menu{
+    width: 100%;
+    text-align: center;
+    padding: 0%;
+    background-color: #d2e297;
+    z-index: 1;
+    position: sticky;}
+
+  .navbar{
+    padding: 10px;}
 
 .contenedorBarraDescuentos {
-  background-color: #b1ca58;
+  background-color: #2b2c27;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -41,21 +49,23 @@ body {
   transform: scale(1.2, 1.2);
   transition: all 0.5s;
 }
+
 /* MAIN */
 
 
 
 /* CARDS */
-.container{
+.container {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
   justify-content: space-around;
-  
+  width: 100%;
+
 }
 
-.card{
-  width: 180px;
+.card {
+  width: 200px;
 }
 
 
@@ -78,7 +88,7 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  
+
 }
 
 
