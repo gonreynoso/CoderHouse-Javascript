@@ -27,7 +27,7 @@
         CABA.
       </p>
     </div>
-    <nav class="navbar navbar-expand-sm col-12 mb-2 justify-content-between">
+    <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
         <a class="navbar-brand" href="./index.html">
           <img src="./favicon/android-chrome-192x192.png" logo" height="90px" width="100px">
@@ -57,17 +57,18 @@
               <a class="nav-link" href="./pages/contacto.html">Contacto</a>
             </li>
           </ul>
-          <input class="form-control me-2 w-500" id="input-after" type="text" placeholder="Buscar" aria-label="Search">
+          <input class="form-control barraBusqueda me-2" id="input-after" type="text" placeholder="Buscar" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" id="boton-input">Buscar</button>
           <!-- <form class="d-flex formulario" role="search">
             
           </form> -->
-          <div class="contenedorBotonesHeader">
-            <button id="botonIniciarSesion" class="botonIniciarSesion btn btn-outline-success">Iniciar
-              sesión</button>
-            <button id="botonCerrarSesion" class="botonCerrarSesion btn btn-outline-info">Cerrar
-              sesión</button>
-          </div>
+          
+        </div>
+        <div class="contenedorBotonesHeader">
+          <button id="botonIniciarSesion" class="botonIniciarSesion btn btn-outline-dark">Iniciar
+            sesión</button>
+          <button id="botonCerrarSesion" class="botonCerrarSesion btn btn-outline-danger">Cerrar
+            sesión</button>
         </div>
       </div>
     </nav>
@@ -135,6 +136,9 @@
             <button class="btn btn-danger btn-sm" id="vaciar-carrito">
               Vaciar carrito
             </button>
+            <button class="btn btn-success btn-sm" id="comprar-carrito">
+              Comprar
+            </button>
           </td>
           <td class="font-weight-bold">$ <span>5000</span></td>
         </template>
@@ -162,9 +166,11 @@
         <div class="boxFooter">
           <h2>Guía rápida</h2>
           <a href="./index.html">Inicio</a>
-          <a href="#">Camping</a>
-          <a href="#">Termos y bombillas</a>
-          <a href="#">Herramientas</a>
+          <a href="./pages/camping.html">Camping</a>
+          <a href="./pages/herramientas.html">Herramientas</a>
+          <a href="./pages/mates.html">Mates</a>
+          <a href="./pages/termos.html">Termos</a>
+          <a href="./pages/contacto.html">Contacto</a>
 
         </div>
         <div class="boxFooter">

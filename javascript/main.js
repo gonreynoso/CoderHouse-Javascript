@@ -4,8 +4,8 @@
 //CONSTANTES
 const listaProductos = document.getElementById("lista-productos");
 const items = document.getElementById("items");
-const templateFooter = document.getElementById('template-footer');
-const templateCarrito = document.getElementById('template-carrito');
+const templateFooter = document.getElementById('template-footer').content;
+const templateCarrito = document.getElementById('template-carrito').content;
 const botonInput = document.getElementById('boton-input');
 const inputAfter = document.getElementById('input-after');
 //VARIABLES
@@ -135,7 +135,19 @@ const mostrarFooter = () => {
         mostrarCarrito()
     })
 
-}
+
+    //Comprar carrito
+    const botonComprar = document.querySelector('#comprar-carrito')
+    botonComprar.addEventListener('click', () => {
+      swal({
+        title: `Compra realizada con éxito`,
+        icon: "success",
+        button: "Cerrar",
+      })
+      articulosCarrito = []
+      mostrarCarrito()
+    })
+  };
 
 
 //SOLICITAR USUARIO POR LOCALSTORAGE
@@ -176,11 +188,11 @@ botonCerrarSesion.addEventListener("click", () => {
 })
 
 // FUNCION PARA BUSCAR EN EL CARRITO
-const buscarProducto = (string) => {
-    console.log(string);
-    let productoBuscado = data.find(producto => producto.nombre.includes(string));
-    botonInput.value = "";
-    console.log(productoBuscado);
-  }
+// const buscarProducto = (string) => {
+//     console.log(string);
+//     let productoBuscado = data.find(producto => producto.nombre.includes(string));
+//     botonInput.value = "";
+//     console.log(productoBuscado);
+//   }
   
-  botonInput.addEventListener("click", () => buscarProducto(inputAfter.value));
+//   botonInput.addEventListener("click", () => buscarProducto(inputAfter.value));
