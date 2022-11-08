@@ -8,6 +8,7 @@ const templateFooter = document.getElementById('template-footer').content;
 const templateCarrito = document.getElementById('template-carrito').content;
 const botonInput = document.getElementById('boton-input');
 const inputAfter = document.getElementById('input-after');
+const botonIniciarSesion = document.getElementById('botonIniciarSesion');
 //VARIABLES
 let articulosCarrito = [];
 let cantidadTotal = 0;
@@ -151,30 +152,51 @@ const mostrarFooter = () => {
 
 
 //SOLICITAR USUARIO POR LOCALSTORAGE
+// botonIniciarSesion.addEventListener("click", () => {
+//   let usuario;
+//   let usuarioStorage = localStorage.getItem("usuario");
+//   if (usuarioStorage === 'undefined') {
+//     usuario = usuarioStorage
+//     //alerta de SWEETALERT
+//     swal({
+//       title: `Bienvenido ${usuario}`,
+//       text: "Haz ingresado con éxito",
+//       icon: "success",
+//       button: "Cerrar",
+//     });
+    
+//   } else {
+//     swal({
+//       text: 'Ingrese su usuario',
+//       content: "input",
+//       button: {
+//         text: "Aceptar",
+//       },
+//     });
+//     localStorage.setItem("usuario", usuario);
+//   };
+// });
+
+
 botonIniciarSesion.addEventListener("click", () => {
   let usuario;
   let usuarioStorage = localStorage.getItem("usuario");
-  if (usuarioStorage) {
-    usuario = usuarioStorage
-    //alerta de SWEETALERT
-    swal({
-      title: `Bienvenido ${usuario}`,
-      text: "Haz ingresado con éxito",
-      icon: "success",
-      button: "Cerrar",
+    Swal.fire({
+      title: "ingrese su nombre",
+      input: "text",
+      showCancelButton: true,
+      confirmButtonText: "Aceptar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: `Bienvenido ${result.value}`,
+        });
+        localStorage.setItem("usuario", usuario);
+      }
     });
-    
-  } else {
-    swal({
-      text: 'Ingrese su usuario',
-      content: "input",
-      button: {
-        text: "Aceptar",
-      },
-    });
-    localStorage.setItem("usuario", usuario);
-  };
-});
+  }
+)
+
 
 //FUNCION PARA CERRAR SESION POR LOCALSTORAGE
 botonCerrarSesion.addEventListener("click", () => {
