@@ -29,7 +29,7 @@ const fetchData = async () => {
   const listaProductos = document.getElementById("lista-productos");
   try {
     //codigo peligroso en caso de que el servidor esté caído
-    const response = await fetch("https://raw.githubusercontent.com/gonreynoso/CoderHouse-Javascript/main/javascript/data.json");
+    const response = await fetch("https://github.com/gonreynoso/CoderHouse-Javascript/blob/main/javascript/camping.json");
     const data = await response.json();
 
     data.forEach(producto => {
