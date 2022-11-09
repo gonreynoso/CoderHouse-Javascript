@@ -26,35 +26,37 @@
       </p>
     </div>
     <nav class="navbar navbar-expand-sm col-12 mb-2">
-      <a class="navbar-brand" href="../index.html">
-        <img src="../favicon/android-chrome-192x192.png" logo" height="90px" width="100px">
-      </a>
-      <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-        <ul class="navbar-nav auto mb-2 mb-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="../index.html">Inicio<span class="sr-only"></span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Productos
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="./camping.html">Camping</a></li>
-              <li><a class="dropdown-item" href="./parrillas.html">Parrillas</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./contacto.html">Contacto</a>
-          </li>
-        </ul>
-        <form class="d-flex formulario" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../favicon/android-chrome-192x192.png" logo" height="90px" width="100px">
+        </a>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Productos
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./camping.html">Camping</a></li>
+                <li><a class="dropdown-item" href="./parrillas.html">Parrillas</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contacto.html">Contacto</a>
+            </li>
+          </ul>
+          <input class="form-control barraBusqueda me-2" id="input-after" type="text" placeholder="Buscar" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="boton-input">Buscar</button>
+          
+        </div>
         <div class="contenedorBotonesHeader">
-          <button id="botonIniciarSesion" class="botonIniciarSesion btn btn-outline-success">Iniciar
+          <button id="botonIniciarSesion" class="botonIniciarSesion btn btn-outline-dark">Iniciar
             sesión</button>
-          <button id="botonCerrarSesion" class="botonCerrarSesion btn btn-outline-info">Cerrar
+          <button id="botonCerrarSesion" class="botonCerrarSesion btn btn-outline-danger">Cerrar
             sesión</button>
         </div>
       </div>
@@ -73,10 +75,10 @@
         </div>
         <div class="carousel-inner text-center">
           <div class="carousel-item active">
-            <img src="./carrusel/parrilla camping.jpg" class="w-500" alt="carpa-bajo-las-estrellas">
+            <img src="../carrusel/parrilla camping.jpg" class="w-500" alt="carpa-bajo-las-estrellas">
           </div>
           <div class="carousel-item">
-            <img src="./carrusel/Campingg.jpg" class="" alt="carpa-y-amigos">
+            <img src="../carrusel/Campingg.jpg" class="" alt="carpa-y-amigos">
           </div>
         </div>
         </button>

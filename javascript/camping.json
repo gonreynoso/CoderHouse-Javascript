@@ -1,5 +1,5 @@
 [
-    { "id": 1, "nombre": "Mochila Tactica Militar", "marca": "Gadnic", "presentacion": "25L Resistente Garantia", "precio": 1000, "descripcion": "Mochila para todo uso", "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_848573-MLA50596972609_072022-F.webp"},
+    { "id": 1, "nombre": "Mochila Tactica Militar", "marca": "Gadnic", "presentacion": "25L Resistente Garantia", "precio": 1000, "descripcion": "Mochila para todo uso", "imagen": "https://drive.google.com/drive/folders/1EYll_pUkdDMCSoo9YMjGH1OvVppPFmCb"},
     { "id": 2, "nombre": "Carpa para baúl", "marca": "Kushiro", "presentacion": "Carpa", "precio": 2000, "descripcion": "Carpa grande", "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_834390-MLA52047222711_102022-F.webp" },
     { "id": 3, "nombre": "Kit Táctico", "marca": "Hi-Extreme", "presentacion": "Supervivencia", "precio": 1000, "descripcion": "Kit Táctico De Supervivencia", "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_789443-MLA51504408289_092022-F.webp" },
     { "id": 4, "nombre": "Carpa", "marca": "Hi-Extreme", "presentacion": "Beach Tent", "precio": 3000, "descripcion": "CARPA PLAYERA", "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_816982-MLA47250106912_082021-F.webp" },
