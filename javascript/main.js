@@ -1,4 +1,4 @@
-//GONZALO REYNOSO
+//GONZALO REYNOSO PROYECTO FINAL
 
 
 //CONSTANTES
@@ -10,6 +10,7 @@ const templateCarrito = document.getElementById('template-carrito').content;
 const botonInput = document.getElementById('boton-input');
 const inputAfter = document.getElementById('input-after');
 const botonIniciarSesion = document.getElementById('botonIniciarSesion');
+
 //VARIABLES
 let articulosCarrito = [];
 let cantidadTotal = 0;
@@ -18,6 +19,7 @@ let cantidadTotal = 0;
 
 document.addEventListener('DOMContentLoaded',() => {
   fetchData();
+  fetchDataParrillas();
   if (localStorage.getItem('carrito')) {
     articulosCarrito = JSON.parse(localStorage.getItem('carrito'))
     mostrarCarrito()
@@ -191,34 +193,7 @@ const mostrarFooter = () => {
     })
   };
 
-
-//SOLICITAR USUARIO POR LOCALSTORAGE
-// botonIniciarSesion.addEventListener("click", () => {
-//   let usuario;
-//   let usuarioStorage = localStorage.getItem("usuario");
-//   if (usuarioStorage === 'undefined') {
-//     usuario = usuarioStorage
-//     //alerta de SWEETALERT
-//     swal({
-//       title: `Bienvenido ${usuario}`,
-//       text: "Haz ingresado con éxito",
-//       icon: "success",
-//       button: "Cerrar",
-//     });
-    
-//   } else {
-//     swal({
-//       text: 'Ingrese su usuario',
-//       content: "input",
-//       button: {
-//         text: "Aceptar",
-//       },
-//     });
-//     localStorage.setItem("usuario", usuario);
-//   };
-// });
-
-
+//INICIAR SESION POR SWEETALERT
 botonIniciarSesion.addEventListener("click", () => {
   let usuario;
   let usuarioStorage = localStorage.getItem("usuario");
@@ -250,12 +225,3 @@ botonCerrarSesion.addEventListener("click", () => {
   });
 })
 
-// FUNCION PARA BUSCAR EN EL CARRITO
-// const buscarProducto = (string) => {
-//     console.log(string);
-//     let productoBuscado = data.find(producto => producto.nombre.includes(string));
-//     botonInput.value = "";
-//     console.log(productoBuscado);
-//   }
-  
-//   botonInput.addEventListener("click", () => buscarProducto(inputAfter.value));
