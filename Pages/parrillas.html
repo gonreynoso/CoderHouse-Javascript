@@ -86,7 +86,7 @@
     </container>
     <!-- Productos-->
     <h1 class="h2main">Parrillas</h1>
-    <div id="lista-productos-parrillas" class="container"></div>
+    <div id="lista-productos" class="container"></div>
     <!-- Carrito-->
     <container class="container">
       <h4>Carrito de compras</h4>
@@ -115,6 +115,9 @@
           <button class="btn btn-danger btn-sm" id="vaciar-carrito">
             vaciar todo
           </button>
+          <button class="btn btn-success btn-sm" id="comprar-carrito">
+            Comprar
+          </button>
         </td>
         <td class="font-weight-bold">$ <span>5000</span></td>
       </template>
@@ -123,14 +126,6 @@
           <th scope="row">id</th>
           <td>Café</td>
           <td>1</td>
-          <td>
-            <button class="btn btn-info btn-sm">
-              +
-            </button>
-            <button class="btn btn-danger btn-sm">
-              -
-            </button>
-          </td>
           <td>$ <span>500</span></td>
         </tr>
       </template>
@@ -153,7 +148,7 @@
     <div class="containerFooter">
       <div class="boxFooter">
         <div class="logo">
-          <img src="./favicon/android-chrome-192x192.png" alt="logo-CampingDad">
+          <img src="../favicon/android-chrome-192x192.png" alt="logo-CampingDad">
         </div>
         <div class="texto-footer">
           <p>
@@ -198,6 +193,8 @@
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
   <!-- JavaScript-->
+
+  <script src="../javascript/cardsParrilla.js"></script>
   <script src="../javascript/main.js"></script>
 
 </body>
