@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded',() => {
 
 //RENDERIZACION DE CARDS POR HTML
 const fetchData = async () => {
-  const listaProductos = document.getElementById("lista-productos-parrillas");
+  const listaProductos = document.getElementById("lista-productos");
   try {
     //codigo peligroso en caso de que el servidor esté caído
     const response = await fetch("https://raw.githubusercontent.com/gonreynoso/CoderHouse-Javascript/main/javascript/camping.json");
@@ -74,7 +74,7 @@ const fetchDataParrillas = async () => {
     const data = await response.json();
 
     data.forEach(producto => {
-      const renderizado = document.createElement("lista-productos");
+      const renderizado = document.createElement("lista-productos-parrilla");
       renderizado.innerHTML =
         `
     <div class= "container-fluid>
