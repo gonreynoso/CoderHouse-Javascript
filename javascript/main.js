@@ -115,14 +115,21 @@ const mostrarCarrito = () => {
 //Proceso para mostrar el total del carrito
 const mostrarFooter = () => {
 
-  footer.innerHTML = ''
+  // footer.innerHTML = ''
     
-    if(articulosCarrito.length === 0) {
+  // articulosCarrito.length === 0 ? footer.innerHTML = `
+  // <th scope="row" colspan="5">Carrito vacío, comience a comprar</th>
+  // `: false}
+
+  if(articulosCarrito.length === 0) {
         footer.innerHTML = `
         <th scope="row" colspan="5">Carrito vacío, comience a comprar</th>
         `
         return
-    }
+    }}
+
+
+    
     // sumar cantidad y sumar totales
     const nCantidad = articulosCarrito.reduce((acc, { cantidad }) => acc + cantidad, 0)
     const nPrecio = articulosCarrito.reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
@@ -153,7 +160,8 @@ const mostrarFooter = () => {
       articulosCarrito = []
       mostrarCarrito()
     })
-  };
+
+
 
 //INICIAR SESION POR SWEETALERT
 botonIniciarSesion.addEventListener("click", () => {

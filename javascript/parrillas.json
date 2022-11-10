@@ -1,8 +1,0 @@
-[
-    { "id": "P1", "nombre": "Parrilla Para Pescados", "marca": "KITSPARRILLEROS", "presentacion": "PARRILLA PARA PESCADOS", "precio": 1000, "descripcion": "MUY COMODA PARA LLEVAR DE CAMPING", "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_721072-MLA50169680173_062022-F.webp"},
-    { "id": "P2", "nombre": "Parrilla Portatil", "marca": "Mor", "presentacion": "Parrilla negra", "precio": 2000, "descripcion": "Parrilla con fogonero", "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_967506-MLA44182835979_112020-F.webp" },
-    { "id": "P3", "nombre": "Parrilla A Carbón", "marca": "Tromen", "presentacion": "Parrilla carbon", "precio": 1000, "descripcion": "PARRILLA A CARBON PORTATIL", "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_753627-MLA40810822193_022020-F.webp" },
-    { "id": "P4", "nombre": "Parrilla móvil", "marca": "Lüsqtoff", "presentacion": "Parrilla gris", "precio": 3000, "descripcion": "Parrilla a todo carbon", "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_951334-MLA32207588132_092019-F.webp" },
-    { "id": "P5", "nombre": "Minichulengo", "marca": "Todo Minichulengos", "presentacion": "X12", "precio": 500, "descripcion": "lParrilla de chapa", "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_811436-MLA51757134696_092022-F.webp" },
-    { "id": "P6", "nombre": "Parrilla", "marca": "Tromen", "presentacion": "Z046", "precio": 300, "descripcion": "Duomo Oval", "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_883203-MLA48111721447_112021-F.webp" }
-]
